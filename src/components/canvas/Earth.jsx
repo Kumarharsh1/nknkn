@@ -103,6 +103,8 @@ const EarthWithNetwork = () => {
 
   return (
     <group ref={group}>
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 5, 5]} intensity={1.6} />
       <Earth />
       <NetworkGrid radius={2.3} />
       <NetworkNodes radius={2.3} />
