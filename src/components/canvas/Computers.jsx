@@ -9,18 +9,18 @@ const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
   const group = useRef();
 
-  // Gently follow the cursor for a lively, interactive feel
+  // Follow the cursor with a responsive yet smooth glide
   useFrame((state) => {
     if (!group.current) return;
     group.current.rotation.y = THREE.MathUtils.lerp(
       group.current.rotation.y,
-      state.pointer.x * 0.35,
-      0.05
+      state.pointer.x * 0.6,
+      0.09
     );
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
-      -state.pointer.y * 0.15,
-      0.05
+      -state.pointer.y * 0.3,
+      0.09
     );
   });
 
