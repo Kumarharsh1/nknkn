@@ -103,7 +103,7 @@ const OrbitRing = ({
       new THREE.Vector3(
         Math.cos(theta) * radius,
         0,
-        Math.sin(theta) * radius * 0.35
+        Math.sin(theta) * radius
       )
     );
   }
@@ -131,8 +131,8 @@ const EarthWithNetwork = () => {
       <Earth />
       <NetworkGrid radius={2.3} />
       <NetworkNodes radius={2.3} />
-      <OrbitRing radius={3.2} tiltX={1.4} tiltZ={0.15} />
-      <OrbitRing radius={3.2} tiltX={1.4} tiltZ={-0.55} />
+      <OrbitRing radius={2.9} tiltX={0.5} tiltZ={0.2} />
+      <OrbitRing radius={2.9} tiltX={1.1} tiltZ={-0.4} />
     </group>
   );
 };
