@@ -5,7 +5,7 @@ import { education } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const EducationCard = ({ index, degree, institution, icon, score, date }) => (
+const EducationCard = ({ index, degree, institution, icon, iconClass, score, date }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 0.75)}
     className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full flex flex-col justify-between"
@@ -20,7 +20,7 @@ const EducationCard = ({ index, degree, institution, icon, score, date }) => (
         <img
           src={icon}
           alt={institution}
-          className="w-16 h-16 object-contain rounded-2xl flex-shrink-0"
+          className={`object-contain rounded-2xl flex-shrink-0 ${iconClass || "w-16 h-16"}`}
         />
       )}
     </div>
