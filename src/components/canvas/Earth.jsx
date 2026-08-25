@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
@@ -39,9 +39,29 @@ const NetworkGrid = ({ radius = 2.3 }) => {
   );
 };
 
+// Soft radial glow sprite for the vertex dots
+const useGlowTexture = () =>
+  useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext("2d");
+    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gradient.addColorStop(0, "rgba(255,255,255,1)");
+    gradient.addColorStop(0.3, "rgba(94,234,212,0.8)");
+    gradient.addColorStop(1, "rgba(94,234,212,0)");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(canvas);
+  }, []);
+
 // Glowing dots at each vertex of the grid
 const NetworkNodes = ({ radius = 2.3 }) => {
-  const geometry = new THREE.IcosahedronGeometry(radius, 2);
+  const glowTexture = useGlowTexture();
+  const geometry = useMemo(
+    () => new THREE.IcosahedronGeometry(radius, 2),
+    [radius]
+  );
   const positions = geometry.attributes.position.array;
 
   return (
@@ -55,22 +75,25 @@ const NetworkNodes = ({ radius = 2.3 }) => {
         />
       </bufferGeometry>
       <pointsMaterial
-        color="#ffffff"
-        size={0.03}
+        map={glowTexture}
+        size={0.18}
         sizeAttenuation
         transparent
-        opacity={0.9}
+        depthWrite={false}
+        blending={THREE.AdditiveBlending}
+        color="#5eead4"
       />
     </points>
   );
 };
 
-// Tilted elliptical orbit ring
+// Tilted elliptical orbit ring (proper 3D criss-cross)
 const OrbitRing = ({
-  radiusX = 3,
-  radiusZ = 1.2,
-  rotationX = 0,
-  color = "#00ffff",
+  radius = 3.2,
+  tiltX = 0,
+  tiltZ = 0,
+  color = "#5eead4",
+  opacity = 0.5,
 }) => {
   const points = [];
   const segments = 128;
@@ -78,17 +101,17 @@ const OrbitRing = ({
     const theta = (i / segments) * Math.PI * 2;
     points.push(
       new THREE.Vector3(
-        Math.cos(theta) * radiusX,
+        Math.cos(theta) * radius,
         0,
-        Math.sin(theta) * radiusZ
+        Math.sin(theta) * radius * 0.35
       )
     );
   }
   const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
   return (
-    <line geometry={geometry} rotation={[rotationX, 0, 0]}>
-      <lineBasicMaterial color={color} transparent opacity={0.6} />
+    <line geometry={geometry} rotation={[tiltX, 0, tiltZ]}>
+      <lineBasicMaterial color={color} transparent opacity={opacity} />
     </line>
   );
 };
@@ -108,8 +131,8 @@ const EarthWithNetwork = () => {
       <Earth />
       <NetworkGrid radius={2.3} />
       <NetworkNodes radius={2.3} />
-      <OrbitRing radiusX={3.2} radiusZ={1.3} rotationX={0.3} />
-      <OrbitRing radiusX={3.0} radiusZ={1.5} rotationX={-0.2} color="#33ffff" />
+      <OrbitRing radius={3.2} tiltX={1.4} tiltZ={0.15} />
+      <OrbitRing radius={3.2} tiltX={1.4} tiltZ={-0.55} />
     </group>
   );
 };
