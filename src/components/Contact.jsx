@@ -119,9 +119,20 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="w-full lg:flex-1 min-w-0 h-[350px] md:h-[550px]"
+        className="w-full lg:flex-1 min-w-0"
       >
-        <EarthCanvas />
+        <div className="h-[350px] md:h-[550px]">
+          <EarthCanvas />
+        </div>
+
+        <div className="mt-2 text-center select-none">
+          <h4 className="font-display font-semibold text-white text-[20px] sm:text-[22px] tracking-[0.22em] drop-shadow-[0_0_14px_rgba(94,234,212,0.45)]">
+            DATA SCIENTIST
+          </h4>
+          <p className="font-display text-[#dfe6ff] text-[13px] sm:text-[14px] tracking-[0.38em] mt-2 opacity-90">
+            · ANYWHERE, ANYTIME
+          </p>
+        </div>
       </motion.div>
     </div>
   );
