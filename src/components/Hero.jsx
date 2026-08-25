@@ -5,9 +5,18 @@ import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className="relative w-full h-screen mx-auto overflow-hidden">
+      {/* Professional background layers */}
+      <div className="absolute inset-0 bg-aurora" />
+      <div className="absolute inset-0 bg-grid opacity-[0.18] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+
+      {/* Interactive 3D computer (follows the cursor) */}
+      <div className="absolute inset-0 z-0">
+        <ComputersCanvas />
+      </div>
+
       <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute top-[120px] inset-x-0 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 z-10`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
@@ -15,19 +24,18 @@ const Hero = () => {
         </div>
 
         <div>
+          <p className={`${styles.heroSubText} text-white-100`}>Hi, I'm</p>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Harsh</span>
+            <span className="text-gradient">Harsh</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2 text-secondary`}>
             I analyze data, build ML models, and create <br className="sm:block hidden" />
-  AI solutions for real-world problems
+            AI solutions for real-world problems
           </p>
         </div>
       </div>
-      
-      <ComputersCanvas />
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-10">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
             <motion.div

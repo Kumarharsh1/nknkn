@@ -19,7 +19,7 @@ const ProjectCard = ({
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="h-full">
       <Tilt
         options={{ max: 45, scale: 1, speed: 450 }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[300px] w-full flex flex-col h-full"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[300px] w-full flex flex-col h-full border border-white/5 transition-shadow duration-300 hover:shadow-card-hover"
       >
         <div className="relative w-full h-[230px]">
           <img

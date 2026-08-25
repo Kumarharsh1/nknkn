@@ -50,8 +50,10 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      } w-full flex items-center py-5 fixed top-0 z-20 transition-all duration-300 ${
+        scrolled
+          ? "bg-primary/70 backdrop-blur-md border-b border-white/10"
+          : "bg-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -73,11 +75,16 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
-                active === nav.id ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              className={`relative text-[18px] font-medium cursor-pointer transition-colors duration-200 ${
+                active === nav.id ? "text-white" : "text-secondary hover:text-white"
+              }`}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
+              <span
+                className={`absolute -bottom-1 left-0 h-[2px] w-full bg-gradient-to-r from-[#915EFF] to-[#00cea8] rounded-full transition-opacity duration-300 ${
+                  active === nav.id ? "opacity-100" : "opacity-0"
+                }`}
+              />
             </li>
           ))}
         </ul>

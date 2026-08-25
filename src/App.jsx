@@ -16,15 +16,20 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        {/* Subtle global tech grid behind all content */}
+        <div className="pointer-events-none fixed inset-0 bg-grid opacity-[0.04] z-0" />
+
+        <div className="relative">
           <Navbar />
           <Hero />
         </div>
+
         <About />
         <Experience />
         <Education />
         <Tech />
         <Works />
+
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />

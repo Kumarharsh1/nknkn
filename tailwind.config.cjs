@@ -4,6 +4,10 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Space Grotesk"', "Inter", "sans-serif"],
+      },
       colors: {
         primary: "#050816",
         secondary: "#aaa6c3",
@@ -14,6 +18,7 @@ module.exports = {
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
+        "card-hover": "0 24px 60px -20px rgba(145, 94, 255, 0.45)",
       },
       screens: {
         xs: "450px",

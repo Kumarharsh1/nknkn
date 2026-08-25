@@ -8,7 +8,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const EducationCard = ({ index, degree, institution, icon, iconWide, score, date }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-    className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full flex flex-col justify-between"
+    className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full flex flex-col justify-between card-hover border border-white/5 hover:border-[#915EFF]/40"
   >
     {iconWide && icon && (
       <img
