@@ -17,7 +17,7 @@ const Earth = () => {
     box.getCenter(center);
 
     const maxDim = Math.max(size.x, size.y, size.z) || 1;
-    const scale = 3 / maxDim;
+    const scale = 6 / maxDim;
     scene.scale.setScalar(scale);
     scene.position.set(
       -center.x * scale,
