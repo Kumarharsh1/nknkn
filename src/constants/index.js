@@ -145,24 +145,28 @@ const education = [
   {
     degree: "M.Tech in Data Science",
     institution: "Indian Institute of Information Technology, Bhopal",
+    icon: "/education/iiit-bhopal.svg",
     score: "CGPA: 8.38",
     date: "Aug 2024 - Mar 2026",
   },
   {
     degree: "B.Tech in Mechanical Engineering",
     institution: "Birsa Institute of Technology Sindri, Dhanbad",
+    icon: "/education/bit-sindri.svg",
     score: "CGPA: 8.55",
     date: "Apr 2019 - May 2023",
   },
   {
     degree: "CBSE Class 12",
     institution: "Delhi Public School, Ranchi",
+    icon: "/education/dps-ranchi.svg",
     score: "84% (2019)",
     date: "2019",
   },
   {
     degree: "CBSE Class 10",
     institution: "Notre Dame School, Gumla",
+    icon: "/education/notre-dame-gumla.svg",
     score: "CGPA: 10.0 (2017)",
     date: "2017",
   },
