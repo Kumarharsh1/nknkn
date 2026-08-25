@@ -220,7 +220,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/project-images/global-connect.svg",
+    image: "/project-images/global-connect.png",
     source_code_link: "https://huggingface.co/spaces/Kumarharsh1/global-connect",
     live_link: "https://labs.google.com/pomelli/website/8mDpbMJZWh48knlUPg34nd",
   },
@@ -242,7 +242,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/project-images/geoai.svg",
+    image: "/project-images/geoai.png",
     source_code_link: "https://classy-cendol-b8581c.netlify.app/",
     live_link: "https://labs.google.com/pomelli/website/8mBbB1Kz_ZH2-Wi7QN7_oh",
   },
@@ -264,7 +264,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/project-images/doctor-prescription.svg",
+    image: "/project-images/doctor-prescription.png",
     source_code_link: "https://doctor-prescriptionapp.streamlit.app/",
   },
   {
@@ -285,7 +285,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/project-images/personametrics.svg",
+    image: "/project-images/personametrics.jpg",
     source_code_link: "https://kumarharshpersonmetrics.netlify.app/",
   },
   {
@@ -306,7 +306,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/project-images/veg-mandi.svg",
+    image: "/project-images/veg-mandi.jpg",
     source_code_link: "https://vegmandi.netlify.app/",
   },
   {
@@ -327,7 +327,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/project-images/argus-vision.svg",
+    image: "/project-images/argus-vision.jpg",
     source_code_link: "https://object-detection12ww.netlify.app/",
   },
 ];
