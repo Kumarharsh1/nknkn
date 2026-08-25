@@ -47,11 +47,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        I'm a Data Scientist and AI/ML Engineer specializing in machine learning,
+        deep learning, computer vision, generative AI, and intelligent automation.
+        I build practical, scalable applications using Python, JavaScript,
+        FastAPI, React, TensorFlow, PyTorch, and modern AI technologies. From
+        multilingual voice platforms and OCR-based prescription analysis to
+        real-time object detection and geospatial solutions, I transform complex
+        problems into user-friendly products. I'm always eager to learn, experiment,
+        and create technology that delivers meaningful real-world impact.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

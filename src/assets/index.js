@@ -14,12 +14,20 @@ import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
+import mysql from "./tech/mysql.svg";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+
+import python from "./tech/python.svg";
+import fastapi from "./tech/fastapi.svg";
+import tensorflow from "./tech/tensorflow.svg";
+import pytorch from "./tech/pytorch.svg";
+import sklearn from "./tech/sklearn.svg";
+import opencv from "./tech/opencv.svg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -46,12 +54,19 @@ export {
   html,
   javascript,
   mongodb,
+  mysql,
   nodejs,
+  python,
   reactjs,
   redux,
   tailwind,
-  typescript,
+  tensorflow,
   threejs,
+  fastapi,
+  pytorch,
+  sklearn,
+  opencv,
+  typescript,
   meta,
   shopify,
   starbucks,
