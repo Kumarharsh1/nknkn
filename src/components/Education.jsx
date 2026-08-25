@@ -5,22 +5,30 @@ import { education } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const EducationCard = ({ index, degree, institution, icon, iconClass, score, date }) => (
+const EducationCard = ({ index, degree, institution, icon, iconWide, score, date }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 0.75)}
     className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full flex flex-col justify-between"
   >
+    {iconWide && icon && (
+      <img
+        src={icon}
+        alt={institution}
+        className="w-full max-w-[260px] mx-auto h-auto object-contain rounded-2xl mb-4"
+      />
+    )}
+
     <div className="flex items-start justify-between gap-4">
       <div>
         <h3 className="text-white font-bold text-[20px]">{degree}</h3>
         <p className="mt-2 text-secondary text-[14px]">{institution}</p>
       </div>
 
-      {icon && (
+      {!iconWide && icon && (
         <img
           src={icon}
           alt={institution}
-          className={`object-contain rounded-2xl flex-shrink-0 ${iconClass || "w-16 h-16"}`}
+          className="w-16 h-16 object-contain rounded-2xl flex-shrink-0"
         />
       )}
     </div>
