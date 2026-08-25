@@ -6,9 +6,10 @@ import { ComputersCanvas } from "./canvas";
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto overflow-hidden">
-      {/* Professional background layers */}
-      <div className="absolute inset-0 bg-aurora" />
-      <div className="absolute inset-0 bg-grid opacity-[0.18] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      {/* Restored wave-style hero background + subtle tech grid blend */}
+      <div className="absolute inset-0 bg-hero-pattern bg-cover bg-no-repeat bg-center" />
+      <div className="absolute inset-0 bg-grid opacity-[0.12] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary" />
 
       {/* Interactive 3D computer (follows the cursor) */}
       <div className="absolute inset-0 z-0">
