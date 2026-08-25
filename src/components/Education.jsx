@@ -20,7 +20,7 @@ const EducationCard = ({ index, degree, institution, icon, score, date }) => (
         <img
           src={icon}
           alt={institution}
-          className="w-14 h-14 object-contain rounded-full flex-shrink-0"
+          className="w-16 h-16 object-contain rounded-2xl flex-shrink-0"
         />
       )}
     </div>
